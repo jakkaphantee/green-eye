@@ -1,16 +1,64 @@
 <template>
   <div class="landing-page">
-    <Home />
+    <Home
+      id="home"
+      @scrollToComponent="scrollToComponent"
+    />
+    <ShopMain
+      id="shop"
+      @scrollToComponent="scrollToComponent"
+    />
+    <ShopSecond
+      id="shopSecond"
+      @scrollToComponent="scrollToComponent"
+    />
+    <Contact
+      id="contact"
+      @scrollToComponent="scrollToComponent"
+    />
   </div>
 </template>
 
 <script>
-import Home from './Home'
+import { mapState, mapMutations } from 'vuex'
+import Home from '@components/LandingPage/Home'
+import ShopMain from '@components/LandingPage/ShopMain'
+import ShopSecond from '@components/LandingPage/ShopSecond'
+import Contact from '@components/LandingPage/Contact'
 
 export default {
   name: 'LandingPage',
   components: {
-    Home
+    Home,
+    ShopMain,
+    ShopSecond,
+    Contact
+  },
+  computed: {
+    ...mapState('user', {
+      currentLandingPageComponent: state => state.currentLandingPageComponent
+    })
+  },
+  watch: {
+    currentLandingPageComponent(newValue) {
+      if (newValue !== '') {
+        this.scrollToComponent(newValue)
+      }
+    }
+  },
+  mounted() {
+    if (this.currentLandingPageComponent !== '') {
+      this.scrollToComponent(this.currentLandingPageComponent)
+    }
+  },
+  methods: {
+    ...mapMutations('user', {
+      setCurrentLandingPageComponent: 'setCurrentLandingPageComponent'
+    }),
+    scrollToComponent(elementId) {
+      document.getElementById(elementId).scrollIntoView({ behavior: 'smooth' })
+      this.setCurrentLandingPageComponent('')
+    }
   }
 }
 </script>

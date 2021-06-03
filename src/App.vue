@@ -2,6 +2,10 @@
   <div class="app">
     <div class="app-wrapper">
       <HamburgerMenu />
+      <img
+        class="cart-icon"
+        :src="require('@/assets/images/general/cart_icon.png')"
+      />
       <router-view />
     </div>
   </div>
@@ -34,5 +38,11 @@ export default {
   width: 100%;
   max-width: 576px;
   height: 100%;
+}
+.cart-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  height: 30px;
 }
 </style>

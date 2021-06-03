@@ -21,7 +21,10 @@
       class="home-start-background"
       :src="require('@/assets/images/home/home_background.png')"
     />
-    <div class="to-shop-box">
+    <div
+      class="to-shop-box"
+      @click="$emit('scrollToComponent', 'shop')"
+    >
       <div class="shop-text">
         <strong>Shop</strong>
       </div>

@@ -1,10 +1,10 @@
 const state = () => ({
-  currentPage: ''
+  currentLandingPageComponent: ''
 })
 
 const mutations = {
-  setCurrentPage: (state, page) => {
-    state.currentPage = page
+  setCurrentLandingPageComponent: (state, componentName) => {
+    state.currentLandingPageComponent = componentName
   }
 }
 

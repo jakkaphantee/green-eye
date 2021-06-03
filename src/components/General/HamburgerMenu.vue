@@ -18,7 +18,7 @@
         <img
           :class="menu.style"
           :src="require(`@/assets/images/menu/${menu.imageName}.png`)"
-          @click="changePage(menu.routeName)"
+          @click="changePage(menu.routeName, menu.componentName)"
         />
       </div>
     </div>
@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
   name: 'HamburgerMenu',
   data: () => ({
@@ -35,26 +37,31 @@ export default {
       {
         imageName: 'menu_home',
         routeName: 'LandingPage',
+        componentName: 'home',
         style: 'home-size'
       },
       {
         imageName: 'menu_about',
         routeName: 'About',
+        componentName: '',
         style: 'about-size'
       },
       {
         imageName: 'menu_quiz',
         routeName: 'Quiz',
+        componentName: '',
         style: 'quiz-size'
       },
       {
         imageName: 'menu_shop',
         routeName: 'LandingPage',
+        componentName: 'shop',
         style: 'shop-size'
       },
       {
         imageName: 'menu_contact',
         routeName: 'LandingPage',
+        componentName: 'contact',
         style: 'contact-size'
       },
     ]
@@ -65,7 +72,13 @@ export default {
     }
   },
   methods: {
-    changePage(routeName) {
+    ...mapMutations('user', {
+      setCurrentLandingPageComponent: 'setCurrentLandingPageComponent'
+    }),
+    changePage(routeName, componentName) {
+      if (routeName === 'LandingPage') {
+        this.setCurrentLandingPageComponent(componentName)
+      }
       this.$router.push({ name: routeName })
       this.isMenuOpen = false
     }
@@ -92,9 +105,13 @@ export default {
 }
 .menu-container {
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   top: 0;
   left: 0;
-  padding: 90px 25px 0px 25px;
+  padding: 0px 25px;
   width: 100vw;
   height: 100vh;
   background-color: $app-background-color;

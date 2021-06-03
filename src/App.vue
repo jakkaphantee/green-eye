@@ -1,14 +1,19 @@
 <template>
   <div class="app">
     <div class="app-wrapper">
+      <HamburgerMenu />
       <router-view />
     </div>
   </div>
 </template>
 
 <script>
+import HamburgerMenu from '@components/General/HamburgerMenu'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    HamburgerMenu
+  }
 }
 </script>
 

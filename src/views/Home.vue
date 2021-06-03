@@ -15,6 +15,7 @@
     <img
       class="start-quiz-button"
       :src="require('@/assets/images/home/quiz_start_button.png')"
+      @click="console.log('click')"
     />
     <img
       class="home-start-background"
@@ -79,6 +80,9 @@ export default {
   width: 55%;
   max-width: 165px;
   z-index: 5;
+  &:hover {
+    cursor: pointer;
+  }
 }
 .home-start-background {
   position: absolute;

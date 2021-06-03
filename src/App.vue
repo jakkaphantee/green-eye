@@ -1,17 +1,14 @@
 <template>
   <div class="app">
-    <Intro />
+    <div class="app-wrapper">
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script>
-import Intro from '@components/Intro'
-
 export default {
-  name: 'App',
-  components: {
-    Intro
-  }
+  name: 'App'
 }
 </script>
 
@@ -20,9 +17,17 @@ export default {
 
 .app {
   position: relative;
-  width: 100%;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: $app-background-color;
 }
-
+.app-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 576px;
+  height: 100%;
+}
 </style>

@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'THSarabunNew';
+  src:
+    local('THSarabunNew'),
+    url('../fonts/THSarabunNewRegular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'THSarabunNew';
+  src:
+    local('THSarabunNew'),
+    url('../fonts/THSarabunNewItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'THSarabunNew';
+  src:
+    local('THSarabunNew'),
+    url('../fonts/THSarabunNewBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'THSarabunNew';
+  src:
+    local('THSarabunNew'),
+    url('../fonts/THSarabunNewBoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Didot';
+  src:
+    local('Didot'),
+    url('../fonts/DidotRegular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Didot';
+  src:
+    local('Didot'),
+    url('../fonts/DidotMedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Didot';
+  src:
+    local('Didot'),
+    url('../fonts/DidotBoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DidotLTStd';
+  src:
+    local('DidotLTStd'),
+    url('../fonts/DidotLTStdItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DidotLTStd';
+  src:
+    local('DidotLTStd'),
+    url('../fonts/DidotLTStdBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

@@ -41,5 +41,6 @@ export default {
   top: 20px;
   right: 20px;
   height: 30px;
+  z-index: 8;
 }
 </style>

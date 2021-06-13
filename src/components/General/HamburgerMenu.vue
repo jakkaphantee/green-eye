@@ -110,10 +110,10 @@ export default {
   justify-content: center;
   align-items: center;
   top: 0;
+  bottom: 0;
   left: 0;
+  right: 0;
   padding: 0px 25px;
-  width: 100vw;
-  height: 100vh;
   background-color: $app-background-color;
   z-index: 9;
   opacity: 0;

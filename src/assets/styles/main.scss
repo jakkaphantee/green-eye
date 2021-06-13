@@ -1,5 +1,4 @@
 @import './variables';
-@import './fonts';
 
 html, body {
   font-family: 'THSarabunNew', 'Didot', 'DidotLTStd';
@@ -47,3 +46,7 @@ html, body {
     text-align: left;
   }
 }
+
+@import './fonts';
+@import './input';
+@import './button';

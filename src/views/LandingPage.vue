@@ -73,6 +73,7 @@ export default {
   scroll-snap-type: y mandatory;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  scroll-behavior: smooth;
   #home,
   #shopMain,
   #shopSecond,

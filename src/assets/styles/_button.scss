@@ -1,0 +1,16 @@
+.green-eye-button {
+  position: relative;
+  font-family: 'Didot';
+  min-width: 80px;
+  padding: 8px;
+  border-style: solid;
+  border-color: $primary-color;
+  border-radius: 9999px;
+  border-width: 1px;
+  background-color: transparent;
+  transition: all .1s;
+  &:hover {
+    background-color: $primary-color;
+    color: $app-background-color;
+  }
+}

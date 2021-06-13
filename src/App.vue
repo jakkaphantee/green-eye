@@ -1,11 +1,11 @@
 <template>
-  <div class="app">
-    <div class="app-wrapper">
-      <HamburgerMenu />
-      <img
+  <div class="app app-backround">
+    <HamburgerMenu />
+    <img
         class="cart-icon"
         :src="require('@/assets/images/general/cart_icon.png')"
       />
+    <div class="app-wrapper">
       <router-view />
     </div>
   </div>
@@ -22,8 +22,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './assets/styles/variables';
-
 .app {
   position: relative;
   width: 100vw;
@@ -31,7 +29,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $app-background-color;
 }
 .app-wrapper {
   position: relative;

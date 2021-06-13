@@ -55,7 +55,7 @@ export default {
       {
         imageName: 'menu_shop',
         routeName: 'LandingPage',
-        componentName: 'shop',
+        componentName: 'shopMain',
         style: 'shop-size'
       },
       {

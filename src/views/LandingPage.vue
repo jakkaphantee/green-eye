@@ -5,7 +5,7 @@
       @scrollToComponent="scrollToComponent"
     />
     <ShopMain
-      id="shop"
+      id="shopMain"
       @scrollToComponent="scrollToComponent"
     />
     <ShopSecond
@@ -63,15 +63,24 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .landing-page {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   scroll-snap-type: y mandatory;
-  div {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  #home,
+  #shopMain,
+  #shopSecond,
+  #contact {
     scroll-snap-align: start;
+  }
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
 </style>

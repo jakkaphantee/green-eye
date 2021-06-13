@@ -23,7 +23,7 @@
     />
     <div
       class="to-shop-box"
-      @click="$emit('scrollToComponent', 'shop')"
+      @click="$emit('scrollToComponent', 'shopMain')"
     >
       <div class="shop-text">
         <strong>Shop</strong>
@@ -52,8 +52,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-x: hidden;
-  overflow-y: scroll;
 }
 .home-brand-logo {
   position: absolute;

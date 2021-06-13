@@ -10,22 +10,40 @@ html, body {
   margin: 0;
   scroll-behavior: smooth;
 }
-
 .app-backround {
   background-color: $app-background-color;
 }
-
 .app-page {
   position: relative;
   width: 100%;
   height: 100%;
 }
-
 .page-title {
   position: relative;
   display: block;
   width: 100%;
   font-size: 24px;
   color: $primary-color;
-  padding-top: 5%;
+  padding-top: 7%;
+}
+.shop-product-description-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 7px;
+  border-width: 1px 0 1px 0;
+  border-style: solid;
+  border-color: $app-border-color;
+  padding: 5px 10px;
+  .shop-product-name {
+    font-family: 'DidotLTStd';
+    font-size: 14px;
+    text-align: left;
+  }
+  .shop-product-description {
+    font-size: 13px;
+    text-align: left;
+  }
 }

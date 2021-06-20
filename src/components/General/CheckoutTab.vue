@@ -35,7 +35,10 @@
             {{ totalCost }}.00 $
           </div>
         </div>
-        <button class="green-eye-button checkout-purchase-button">
+        <button
+          class="green-eye-button checkout-purchase-button"
+          @click="changePage('Purchase')"
+        >
           Purchase
         </button>
       </div>
@@ -63,6 +66,12 @@ export default {
     ...mapGetters('checkout', {
       totalCost: 'totalCost'
     })
+  },
+  methods: {
+    changePage(pageName) {
+      this.$router.push({ name: pageName })
+      this.isOpen = false
+    }
   }
 }
 </script>

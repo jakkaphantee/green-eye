@@ -21,6 +21,7 @@
           @click="changePage(menu.routeName, menu.componentName)"
         />
       </div>
+      <img class="logo-image" :src="require('@/assets/images/general/brand_logo.png')" />
     </div>
   </div>
 </template>
@@ -149,5 +150,10 @@ export default {
   .contact-size {
     width: 140px;
   }
+}
+.logo-image {
+  position: absolute;
+  width: 20%;
+  bottom: 10px;
 }
 </style>

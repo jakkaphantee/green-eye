@@ -71,15 +71,15 @@ export default {
   overflow-x: hidden;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  scroll-behavior: smooth;
   #home,
   #shopMain,
   #shopSecond,
   #contact {
     scroll-snap-align: start;
   }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
   &::-webkit-scrollbar {
     display: none;
   }

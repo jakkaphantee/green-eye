@@ -16,14 +16,29 @@
       class="checkout-content-container"
       :class="isOpen ? 'show-menu' : ''"
     >
-      <CheckoutProductCard
-        v-for="(item, index) in cartItems"
-        :key="item.name"
-        v-bind="{
-          productData: item,
-          isLast: index === cartItems.length - 1
-        }"
-      />
+      <div class="checkout-product-list">
+        <CheckoutProductCard
+          v-for="(item, index) in cartItems"
+          :key="item.name"
+          v-bind="{
+            productData: item,
+            isLast: index === cartItems.length - 1
+          }"
+        />
+      </div>
+      <div class="checkout-summary">
+        <div class="checkout-total-price">
+          <div>
+            Total
+          </div>
+          <div>
+            {{ totalCost }}.00 $
+          </div>
+        </div>
+        <button class="green-eye-button checkout-purchase-button">
+          Purchase
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -81,6 +96,46 @@ export default {
   &.show-menu {
     visibility: visible;
     opacity: 1;
+  }
+}
+.checkout-product-list {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 73%;
+  margin-bottom: 25%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.checkout-summary {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  height: 25%;
+  max-height: 200px;
+  padding: 10px 0 0 0;
+  z-index: 2;
+  .checkout-total-price {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Didot';
+    font-size: 20px;
+    div {
+      flex-grow: 1;
+    }
+  }
+  .checkout-purchase-button {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
   }
 }
 </style>

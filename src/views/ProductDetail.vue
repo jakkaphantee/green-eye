@@ -176,10 +176,16 @@ export default {
           }
           return 'hide'
         }
+        default: {
+          if (imageIndex === this.currentImageIndex) {
+            return 'active'
+          }
+          return ''
+        }
       }
     },
     setNextImageTimer() {
-      clearInterval(this.nextImageTimer)
+      clearTimeout(this.nextImageTimer)
       this.nextImageTimer = setTimeout(() => {
         this.nextImage()
       }, 3000)
@@ -187,6 +193,9 @@ export default {
     addProductToCart() {
       this.addToCart(this.currentProduct)
     }
+  },
+  beforeDestroy() {
+    clearTimeout(this.nextImageTimer)
   }
 }
 </script>
@@ -324,6 +333,10 @@ export default {
           left: -100%;
         }
       }
+    }
+    &.active {
+      left: 0;
+      z-index: 1;
     }
     &.prev {
       left: -100%;

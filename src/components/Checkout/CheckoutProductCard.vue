@@ -113,7 +113,7 @@ export default {
   position: relative;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
   width: 100%;
   padding: 16px 0;
@@ -167,16 +167,16 @@ export default {
   .product-dropdown-container {
     position: absolute;
     top: 100%;
-    display: none;
     width: 100%;
     max-height: 150px;
     margin-top: 4px;
     background-color: $app-background-color;
     border: 1px solid $primary-color;
     border-radius: 8px;
+    visibility: hidden;
     z-index: 5;
     &.show-menu {
-      display: block;
+      visibility: visible;
     }
   }
 }

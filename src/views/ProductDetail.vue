@@ -7,16 +7,12 @@
       </div>
     </div>
     <div class="product-image-wrapper mt-4">
-      <img
-        class="arrow-indicator left"
-        :src="require('@/assets/images/general/arrow_left.png')"
-        @click="previousImage()"
-      />
-      <img
-        class="arrow-indicator right"
-        :src="require('@/assets/images/general/arrow_right.png')"
-        @click="nextImage()"
-      />
+      <div class="arrow-indicator left" @click="previousImage()">
+        <img :src="require('@/assets/images/general/arrow_left.png')" />
+      </div>
+      <div class="arrow-indicator right" @click="nextImage()">
+        <img :src="require('@/assets/images/general/arrow_right.png')" />
+      </div>
       <div class="product-image-box">
         <img
           v-for="(imageName, index) in currentProduct.imageList"
@@ -203,7 +199,7 @@ export default {
 }
 .product-title-container {
   position: relative;
-  padding-top: 20%;
+  padding-top: 22%;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -237,16 +233,24 @@ export default {
   justify-content: center;
   .arrow-indicator {
     position: absolute;
+    display: flex;
+    align-items: center;
     cursor: pointer;
     top: 50%;
     transform: translateY(-50%);
-    width: 15px;
-    z-index: 5;
+    width: 25px;
+    height: 100%;
+    z-index: 6;
+    img {
+      width: 15px;
+    }
     &.right {
-      right: 20px;
+      justify-content: flex-end;
+      right: 25px;
     }
     &.left {
-      left: 20px;
+      justify-content: flex-start;
+      left: 25px;
     }
   }
 }

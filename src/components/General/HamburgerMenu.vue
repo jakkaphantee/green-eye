@@ -99,9 +99,7 @@ export default {
   left: 20px;
   z-index: 10;
   width: 35px;
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 }
 .menu-container {
   position: fixed;

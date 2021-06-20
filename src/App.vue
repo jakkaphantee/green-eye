@@ -1,10 +1,7 @@
 <template>
   <div class="app app-backround">
     <HamburgerMenu />
-    <img
-        class="cart-icon"
-        :src="require('@/assets/images/general/cart_icon.png')"
-      />
+    <CheckoutTab />
     <div class="app-wrapper">
       <router-view />
     </div>
@@ -13,13 +10,15 @@
 
 <script>
 import HamburgerMenu from '@components/General/HamburgerMenu'
+import CheckoutTab from '@components/General/CheckoutTab'
 export default {
   name: 'App',
   components: {
-    HamburgerMenu
+    HamburgerMenu,
+    CheckoutTab
   }
 }
-</script>
+</script> 
 
 <style lang="scss" scoped>
 .app {
@@ -36,12 +35,5 @@ export default {
   max-width: 576px;
   height: 100%;
   padding-bottom: env(safe-area-inset-bottom);
-}
-.cart-icon {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  height: 30px;
-  z-index: 8;
 }
 </style>

@@ -32,7 +32,7 @@
             Total
           </div>
           <div>
-            {{ totalCost }}.00 $
+            {{ parseFloat(totalCost) }} $
           </div>
         </div>
         <button

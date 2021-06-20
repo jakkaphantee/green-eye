@@ -42,7 +42,7 @@
         </div>
       </div>
       <div class="product-price">
-        ${{ totalPrice }}.00
+        ${{ totalPrice }}
       </div>
     </div>
   </div>
@@ -78,7 +78,7 @@ export default {
       return this.productData.imageList[0]
     },
     totalPrice() {
-      return this.productData.amount * this.productData.price
+      return parseFloat(this.productData.amount * this.productData.price)
     },
     dropdownId() {
       return `dropdown-${this.coverImageName}`
@@ -97,7 +97,6 @@ export default {
     },
     dropdownListener($event) {
       const { id } = $event.target
-      console.log(id)
       if (id !== this.dropdownId) {
         this.isDropdownOpen = false
       }

@@ -1,7 +1,11 @@
 <template>
   <div class="app-page produt-detail-page">
     <div class="product-title-container">
-      <img class="back-icon" :src="require('@/assets/images/general/down_arrow.png')" />
+      <img
+        class="back-icon"
+        :src="require('@/assets/images/general/down_arrow.png')"
+        @click="changePage('LandingPage')"
+      />
       <div class="title-text">
         {{ currentProduct.name }}
       </div>
@@ -175,6 +179,13 @@ export default {
     ...mapMutations('checkout', {
       addToCart: 'addToCart'
     }),
+    ...mapMutations('user', {
+      setCurrentLandingPageComponent: 'setCurrentLandingPageComponent'
+    }),
+    changePage(pageName) {
+      this.setCurrentLandingPageComponent('shopMain')
+      this.$router.push({ name: pageName })
+    },
     previousImage() {
       this.currentTransition = 'prev'
       this.setNextImageTimer()

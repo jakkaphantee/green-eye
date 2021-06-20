@@ -5,7 +5,7 @@
     </div>
     <div class="contact-description">
       <div class="contact-profile-image">
-        <img :src="require('@/assets/images/general/owner.png')" />
+        <img :src="require('@/assets/images/general/owner.png')" @click="openProfile()" />
       </div>
       <div class="mt-2">
         Paparwarin Leangbunlertchai
@@ -35,6 +35,11 @@
 <script>
 export default {
   name: 'Contact',
+  methods: {
+    openProfile() {
+      window.open('https://www.instagram.com/bom_leang', '_blank')
+    }
+  }
 }
 </script>
 

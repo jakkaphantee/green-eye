@@ -27,17 +27,29 @@
         <input id="email" class="green-eye-input block" autocomplete="off" />
       </div>
       <div class="transfer-form-button">
-        <button class="green-eye-button">
+        <button class="green-eye-button" @click="isModalOpen = true">
           Send
         </button>
       </div>
     </div>
+    <PurchaseSuccessModal
+      :isModalOpen="isModalOpen"
+      @closeModal="isModalOpen = false"
+    />
   </div>
 </template>
 
 <script>
+import PurchaseSuccessModal from '@components/Purchase/PurchaseSuccessModal'
+
 export default {
   name: 'Purchase',
+  components: {
+    PurchaseSuccessModal
+  },
+  data: () => ({
+    isModalOpen: false
+  }),
   methods: {
     changePage(pageName) {
       this.$router.push({ name: pageName })

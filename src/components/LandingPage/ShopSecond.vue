@@ -45,19 +45,19 @@ export default {
   data: () => ({
     productList: [
       {
-        id: '5',
+        id: '6',
         name: 'Match',
         imageName: 'match_home',
         description: 'belief that you can do things well'
       },
       {
-        id: '6',
+        id: '7',
         name: 'Zippo',
         imageName: 'zippo_home',
         description: 'belief that you can do things well'
       },
       {
-        id: '7',
+        id: '5',
         name: 'Fire gun',
         imageName: 'fire_gun_home',
         description: 'belief that you can do things well'

@@ -20,6 +20,19 @@
         class="product-image-marker"
       />
     </div>
+    <div class="product-detail-container mt-4">
+      <div class="product-price">
+        {{ currentProduct.priceTag }}
+      </div>
+      <div class="product-description">
+        {{ currentProduct.description }}
+      </div>
+    </div>
+    <div class="product-buy-wrapper">
+      <button class="green-eye-button" @click="addProductToCart()">
+        Add cart
+      </button>
+    </div>
   </div>
 </template>
 
@@ -85,6 +98,11 @@ export default {
   },
   created() {
     this.productId = this.$route.params.id
+  },
+  methods: {
+    addProductToCart() {
+      // add to cart
+    }
   }
 }
 </script>
@@ -114,6 +132,7 @@ export default {
   align-items: center;
   .title-text {
     position: relative;
+    color: $primary-color;
     font-family: 'Didot';
     flex-grow: 1;
     text-align: end;
@@ -183,5 +202,27 @@ export default {
       background-color: $primary-color;
     }
   }
+}
+.product-detail-container {
+  position: relative;
+  padding: 0 20px;
+  margin-bottom: 100px;
+  text-align: left;
+  .product-price {
+    font-family: 'DidotLTStd';
+    font-size: 28px;
+    color: $primary-color;
+  }
+  .product-description {
+    font-size: 14px;
+  }
+}
+.product-buy-wrapper {
+  position: fixed;
+  left: 0;
+  bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 </style>

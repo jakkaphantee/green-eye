@@ -1,5 +1,5 @@
 <template>
-  <div class="shop-product-card">
+  <div class="shop-product-card" @click="changePage(name)">
     <div class="shop-product-image-container">
       <img width="100%" :src="require(`@/assets/images/product/${imageName}_home.png`)" />
     </div>
@@ -18,6 +18,10 @@
 export default {
   name: 'ProductCard',
   props: {
+    id: {
+      type: String,
+      default: ''
+    },
     name: {
       type: String,
       default: 'Product Title',
@@ -29,6 +33,11 @@ export default {
     description: {
       type: String,
       default: 'description long text',
+    }
+  },
+  methods: {
+    changePage() {
+      this.$router.push({ name: 'ProductDetail', params: { id: this.id } })
     }
   }
 }

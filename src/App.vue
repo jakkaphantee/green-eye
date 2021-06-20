@@ -35,6 +35,7 @@ export default {
   width: 100%;
   max-width: 576px;
   height: 100%;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 .cart-icon {
   position: fixed;

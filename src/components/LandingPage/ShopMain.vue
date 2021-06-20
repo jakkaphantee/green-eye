@@ -10,6 +10,7 @@
           :key="product.name"
           cols="6">
           <ProductCard
+            :id="product.id"
             :name="product.name"
             :imageName="product.imageName"
             :description="product.description" />
@@ -30,21 +31,25 @@ export default {
   data: () => ({
     productData: [
       {
+        id: '1',
         name: 'Patchouli candle',
         imageName: 'patchouli',
         description: 'belief that you can do things well',
       },
       {
+        id: '2',
         name: 'Bergamot candle',
         imageName: 'bergamot',
         description: 'becoming calm after being angry',
       },
       {
+        id: '3',
         name: 'Vanilla candle',
         imageName: 'vanilla',
         description: 'delight of love',
       },
       {
+        id: '4',
         name: 'Mint candle',
         imageName: 'mint',
         description: 'understand and solve something',

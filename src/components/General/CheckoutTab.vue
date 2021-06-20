@@ -16,16 +16,32 @@
       class="checkout-content-container"
       :class="isOpen ? 'show-menu' : ''"
     >
+      <CheckoutProductCard />
     </div>
   </div>
 </template>
 
 <script>
+import { mapState, mapGetters } from 'vuex'
+
+import CheckoutProductCard from '../Checkout/CheckoutProductCard'
+
 export default {
   name: 'CheckoutTab',
+  components: {
+    CheckoutProductCard
+  },
   data: () => ({
     isOpen: false
-  })
+  }),
+  computed: {
+    ...mapState('checkout', {
+      cartItems: state => state.cart
+    }),
+    ...mapGetters('checkout', {
+      totalCost: 'totalCost'
+    })
+  }
 }
 </script>
 
@@ -46,6 +62,7 @@ export default {
 }
 .checkout-content-container {
   position: fixed;
+  padding: 20% 20px 0 20px;
   top: 0;
   bottom: 0;
   left: 0;

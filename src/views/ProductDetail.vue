@@ -48,6 +48,8 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
   name: 'PropductDetail',
   data: () => ({
@@ -61,7 +63,8 @@ export default {
           'patchouli_02',
           'patchouli_03'
         ],
-        priceTag: '3.00$'
+        priceTag: '3.00$',
+        price: 3
       },
       {
         id: '2',
@@ -72,7 +75,8 @@ export default {
           'bergamot_02',
           'bergamot_03'
         ],
-        priceTag: '3.00$'
+        priceTag: '3.00$',
+        price: 3
       },
       {
         id: '3',
@@ -83,7 +87,8 @@ export default {
           'vanilla_02',
           'vanilla_03'
         ],
-        priceTag: '3.00$'
+        priceTag: '3.00$',
+        price: 3
       },
       {
         id: '4',
@@ -94,7 +99,8 @@ export default {
           'mint_02',
           'mint_03'
         ],
-        priceTag: '3.00$'
+        priceTag: '3.00$',
+        price: 3
       }
     ],
     productId: '',
@@ -129,6 +135,9 @@ export default {
     this.setNextImageTimer()
   },
   methods: {
+    ...mapMutations('checkout', {
+      addToCart: 'addToCart'
+    }),
     previousImage() {
       this.currentTransition = 'prev'
       this.setNextImageTimer()
@@ -176,7 +185,7 @@ export default {
       }, 3000)
     },
     addProductToCart() {
-      // add to cart
+      this.addToCart(this.currentProduct)
     }
   }
 }

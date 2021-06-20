@@ -3,6 +3,7 @@
     <img
       class="back-icon"
       :src="require('@/assets/images/general/back_icon.png')"
+      @click="changePage('LandingPage')"
     />
     <img
       class="transfer-detail"
@@ -36,7 +37,12 @@
 
 <script>
 export default {
-  name: 'Purchase'
+  name: 'Purchase',
+  methods: {
+    changePage(pageName) {
+      this.$router.push({ name: pageName })
+    }
+  }
 }
 </script>
 

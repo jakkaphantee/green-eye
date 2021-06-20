@@ -1,7 +1,7 @@
 <template>
   <div class="app app-backround">
-    <HamburgerMenu />
-    <CheckoutTab />
+    <HamburgerMenu v-if="isShowHamburger" />
+    <CheckoutTab v-if="isShowCart" />
     <div class="app-wrapper">
       <router-view />
     </div>
@@ -11,11 +11,34 @@
 <script>
 import HamburgerMenu from '@components/General/HamburgerMenu'
 import CheckoutTab from '@components/General/CheckoutTab'
+import { mapState } from 'vuex'
 export default {
   name: 'App',
   components: {
     HamburgerMenu,
     CheckoutTab
+  },
+  data: () => ({
+    notAllowHamburger: [
+      'Purchase'
+    ],
+    notAllowCart: [
+      'Purchase'
+    ]
+  }),
+  computed: {
+    ...mapState('user', {
+      currentLandingPageComponent: state => state.currentLandingPageComponent
+    }),
+    currentPage() {
+      return this.$route.name
+    },
+    isShowHamburger() {
+      return !this.notAllowHamburger.includes(this.currentPage)
+    },
+    isShowCart() {
+      return !this.notAllowCart.includes(this.currentPage)
+    }
   }
 }
 </script> 

@@ -11,6 +11,7 @@
           :key="product.name"
           cols="12">
           <ShopSecondProductCard
+            :productId="product.id"
             :name="product.name"
             :imageName="product.imageName"
             :description="product.description" />
@@ -44,16 +45,19 @@ export default {
   data: () => ({
     productList: [
       {
+        id: '5',
         name: 'Match',
         imageName: 'match_home',
         description: 'belief that you can do things well'
       },
       {
+        id: '6',
         name: 'Zippo',
         imageName: 'zippo_home',
         description: 'belief that you can do things well'
       },
       {
+        id: '7',
         name: 'Fire gun',
         imageName: 'fire_gun_home',
         description: 'belief that you can do things well'

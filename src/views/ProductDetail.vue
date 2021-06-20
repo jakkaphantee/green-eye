@@ -101,6 +101,43 @@ export default {
         ],
         priceTag: '3.00$',
         price: 3
+      },
+      {
+        id: '5',
+        name: 'Fire gun',
+        description: 'หัวปืนพ่นไฟ : fire gun',
+        imageList: [
+          'fire_gun_01',
+          'fire_gun_02',
+          'fire_gun_03',
+          'fire_gun_04'
+        ],
+        priceTag: '4.78$',
+        price: 4.78
+      },
+      {
+        id: '6',
+        name: 'Match',
+        description: 'ไม้ขีดไฟ 1 กรัก 50 ก้าน : match',
+        imageList: [
+          'match_01',
+          'match_02',
+          'match_03',
+          'match_04',
+          'match_05'
+        ],
+        priceTag: '1.00$',
+        price: 1
+      },
+      {
+        id: '7',
+        name: 'Zippo',
+        description: 'ซิปโป้รุ่นคลาสสิค : zippo',
+        imageList: [
+          'zippo_05'
+        ],
+        priceTag: '23.00$',
+        price: 23
       }
     ],
     productId: '',

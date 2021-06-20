@@ -23,7 +23,8 @@ export default {
       'Purchase'
     ],
     notAllowCart: [
-      'Purchase'
+      'Purchase',
+      'About'
     ]
   }),
   computed: {

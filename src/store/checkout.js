@@ -39,6 +39,18 @@ const mutations = {
       })
     }
   },
+  changeItemAmount: (state, { itemId, amount }) => {
+    const newCart = state.cart.map(item => {
+      if (item.id === itemId) {
+        return {
+          ...item,
+          amount
+        }
+      }
+      return item
+    })
+    state.cart = [...newCart]
+  }
 }
 
 export default {

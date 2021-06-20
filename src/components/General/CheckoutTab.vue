@@ -16,7 +16,14 @@
       class="checkout-content-container"
       :class="isOpen ? 'show-menu' : ''"
     >
-      <CheckoutProductCard />
+      <CheckoutProductCard
+        v-for="(item, index) in cartItems"
+        :key="item.name"
+        v-bind="{
+          productData: item,
+          isLast: index === cartItems.length - 1
+        }"
+      />
     </div>
   </div>
 </template>
@@ -62,7 +69,7 @@ export default {
 }
 .checkout-content-container {
   position: fixed;
-  padding: 20% 20px 0 20px;
+  padding: 15% 20px 0 20px;
   top: 0;
   bottom: 0;
   left: 0;

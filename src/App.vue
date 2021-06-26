@@ -24,7 +24,8 @@ export default {
     ],
     notAllowCart: [
       'Purchase',
-      'About'
+      'About',
+      'Quiz'
     ]
   }),
   computed: {

@@ -5,6 +5,7 @@ import About from '@/views/About'
 import ProductDetail from '@/views/ProductDetail'
 import Purchase from '@/views/Purchase'
 import Quiz from '@/views/Quiz'
+import Result from '@/views/Result'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ const routes = [
     path: '/play-quiz',
     name: 'Quiz',
     component: Quiz
+  },
+  {
+    path: '/result',
+    name: 'Result',
+    component: Result
   }
 ]
 

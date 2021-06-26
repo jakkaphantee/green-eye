@@ -162,7 +162,7 @@ export default {
   watch: {
     quizCount(newValue) {
       if (newValue > 12) {
-        this.$router.push({ name: 'Home' })
+        this.$router.push({ name: 'Result' })
       } else if (newValue > 9) {
         this.currentQuizGroup = '4'
       } else if (newValue > 6) {

@@ -15,7 +15,7 @@
     <img
       class="start-quiz-button"
       :src="require('@/assets/images/home/quiz_start_button.png')"
-      @click="console.log('click')"
+      @click="changePage('Quiz')"
     />
     <img
       class="home-start-background"
@@ -40,7 +40,12 @@
 
 <script>
 export default {
-  name: 'Home'
+  name: 'Home',
+  methods: {
+    changePage(routeName) {
+      this.$router.push({ name: routeName })
+    }
+  }
 }
 </script>
 

@@ -4,6 +4,7 @@ import LandingPage from '@/views/LandingPage'
 import About from '@/views/About'
 import ProductDetail from '@/views/ProductDetail'
 import Purchase from '@/views/Purchase'
+import Quiz from '@/views/Quiz'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/purchase',
     name: 'Purchase',
     component: Purchase
+  },
+  {
+    path: '/play-quiz',
+    name: 'Quiz',
+    component: Quiz
   }
 ]
 

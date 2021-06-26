@@ -23,7 +23,7 @@
           :key="imageName"
           class="product-image"
           :class="checkActiveClass(index)"
-          :src="require(`@/assets/images/product/${imageName}.jpeg`)"
+          :src="require(`@/assets/images/product/${imageName}.png`)"
         />
       </div>
     </div>
@@ -65,7 +65,8 @@ export default {
         imageList: [
           'patchouli_01',
           'patchouli_02',
-          'patchouli_03'
+          'patchouli_03',
+          'all_candle_01'
         ],
         priceTag: '3.00$',
         price: 3
@@ -77,7 +78,9 @@ export default {
         imageList: [
           'bergamot_01',
           'bergamot_02',
-          'bergamot_03'
+          'bergamot_03',
+          'all_candle_01',
+          'all_candle_02'
         ],
         priceTag: '3.00$',
         price: 3
@@ -89,7 +92,8 @@ export default {
         imageList: [
           'vanilla_01',
           'vanilla_02',
-          'vanilla_03'
+          'vanilla_03',
+          'all_candle_01'
         ],
         priceTag: '3.00$',
         price: 3
@@ -101,7 +105,9 @@ export default {
         imageList: [
           'mint_01',
           'mint_02',
-          'mint_03'
+          'mint_03',
+          'all_candle_01',
+          'all_candle_02'
         ],
         priceTag: '3.00$',
         price: 3

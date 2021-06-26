@@ -259,8 +259,10 @@ export default {
   color: $primary-color;
 }
 .quiz-text {
+  width: 80%;
   font-size: 18px;
   color: $primary-color;
+  word-wrap: break-word;
 }
 .quiz-answer-container {
   position: relative;

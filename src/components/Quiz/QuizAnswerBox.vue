@@ -1,5 +1,8 @@
 <template>
-  <div class="quiz-answer-box-container" @click="$emit('selectAnswer', answerId)">
+  <div
+    class="quiz-answer-box-container"
+    @click="$emit('selectAnswer', answerId)"
+  >
     <div v-if="isSelected" class="checked-mark" />
   </div>
 </template>

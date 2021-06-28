@@ -34,7 +34,7 @@ export default {
       'About',
       'Quiz'
     ],
-    isIntroEnd: true
+    isIntroEnd: false
   }),
   computed: {
     ...mapState('user', {

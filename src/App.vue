@@ -1,8 +1,12 @@
 <template>
-  <div class="app app-backround">
-    <HamburgerMenu v-if="isShowHamburger" />
-    <CheckoutTab v-if="isShowCart" />
-    <div class="app-wrapper">
+  <div class="app">
+    <HamburgerMenu v-if="isShowHamburger && isIntroEnd && isHamburgerShow" />
+    <CheckoutTab v-if="isShowCart && isIntroEnd" />
+    <Intro
+      v-if="!isIntroEnd"
+      @introEnd="isIntroEnd = true"
+    />
+    <div v-else class="app-wrapper">
       <router-view />
     </div>
   </div>
@@ -11,12 +15,15 @@
 <script>
 import HamburgerMenu from '@components/General/HamburgerMenu'
 import CheckoutTab from '@components/General/CheckoutTab'
+import Intro from '@components/Intro'
 import { mapState } from 'vuex'
+
 export default {
   name: 'App',
   components: {
     HamburgerMenu,
-    CheckoutTab
+    CheckoutTab,
+    Intro
   },
   data: () => ({
     notAllowHamburger: [
@@ -26,11 +33,13 @@ export default {
       'Purchase',
       'About',
       'Quiz'
-    ]
+    ],
+    isIntroEnd: true
   }),
   computed: {
     ...mapState('user', {
-      currentLandingPageComponent: state => state.currentLandingPageComponent
+      currentLandingPageComponent: state => state.currentLandingPageComponent,
+      isHamburgerShow: state => state.isHamburgerShow
     }),
     currentPage() {
       return this.$route.name

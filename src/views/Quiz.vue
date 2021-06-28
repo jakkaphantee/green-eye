@@ -1,46 +1,60 @@
 <template>
   <div class="app-page">
-    <img
-      class="quiz-video-background"
-      :src="currentQuiz.mediaSource"
-    />
-    <div class="header-container">
-      <div>
-        {{ quizCount }} / 12
-      </div>
-      <div>
-        GREEN EYE
-      </div>
+    <div v-if="currentStep === 'intro-brief'" class="intro-brief-content">
+      <img
+        class="intro-brief-text"
+        :src="require('@/assets/images/intro/intro_brief_text.png')"
+        @click="currentStep = ''; setIsHamburgerShow(true)"
+      />
+      <img
+        width="100%"
+        height="100%"
+        src="https://firebasestorage.googleapis.com/v0/b/green-eye-46944.appspot.com/o/intro_brief.jpeg?alt=media&token=4685686c-e4fb-4242-8cb4-1df6da88ffe7"
+      />
     </div>
-    <div class="quiz-content-container">
-      <div class="quiz-text">
-        {{ currentQuiz.name }}
-      </div>
-      <div class="quiz-answer-container mt-4">
-        <div class="quiz-answer-box-wrapper">
-          <div
-            v-for="(answer, index) in answerList"
-            :key="index"
-          >
-            <QuizAnswerBox
-              :answerId="answer.id"
-              :isSelected="answer.isSelected"
-              @selectAnswer="selectAnswer(answer)"
-            />
-            <div v-if="index !== 4" class="quiz-answer-background" />
-          </div>
+    <div class="app-page">
+      <img
+        class="quiz-video-background"
+        :src="currentQuiz.mediaSource"
+      />
+      <div class="header-container">
+        <div>
+          {{ quizCount }} / 12
         </div>
-        <div class="quiz-answer-description-container">
-          <div>
-            น้อย
-          </div>
-          <div>
-            มาก
-          </div>
+        <div>
+          GREEN EYE
         </div>
       </div>
-      <div class="quiz-next" @click="changeQuiz()">
-        TAP TO CONTINUE
+      <div class="quiz-content-container">
+        <div class="quiz-text">
+          {{ currentQuiz.name }}
+        </div>
+        <div class="quiz-answer-container mt-4">
+          <div class="quiz-answer-box-wrapper">
+            <div
+              v-for="(answer, index) in answerList"
+              :key="index"
+            >
+              <QuizAnswerBox
+                :answerId="answer.id"
+                :isSelected="answer.isSelected"
+                @selectAnswer="selectAnswer(answer)"
+              />
+              <div v-if="index !== 4" class="quiz-answer-background" />
+            </div>
+          </div>
+          <div class="quiz-answer-description-container">
+            <div>
+              น้อย
+            </div>
+            <div>
+              มาก
+            </div>
+          </div>
+        </div>
+        <div class="quiz-next" @click="changeQuiz()">
+          TAP TO CONTINUE
+        </div>
       </div>
     </div>
   </div>
@@ -56,6 +70,7 @@ export default {
     QuizAnswerBox
   },
   data: () => ({
+    currentStep: 'intro-brief',
     answerList: [
       {
         id: '1',
@@ -198,11 +213,15 @@ export default {
   mounted() {
     this.resetAnswer()
     this.resetScore()
+    this.setIsHamburgerShow(false)
   },
   methods: {
     ...mapMutations('quiz', {
       addScore: 'addScore',
       resetScore: 'resetScore'
+    }),
+    ...mapMutations('user', {
+      setIsHamburgerShow: 'setIsHamburgerShow'
     }),
     selectAnswer(answer) {
       const currentSelectedAnswer = this.answerList.map((ans) => {
@@ -316,5 +335,19 @@ export default {
   width: 100%;
   height: 100%;
   z-index: -1;
+}
+.intro-brief-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .intro-brief-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80%;
+  }
 }
 </style>

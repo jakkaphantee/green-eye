@@ -1,10 +1,14 @@
 const state = () => ({
-  currentLandingPageComponent: ''
+  currentLandingPageComponent: '',
+  isHamburgerShow: true
 })
 
 const mutations = {
   setCurrentLandingPageComponent: (state, componentName) => {
     state.currentLandingPageComponent = componentName
+  },
+  setIsHamburgerShow: (state, value) => {
+    state.isHamburgerShow = value
   }
 }
 

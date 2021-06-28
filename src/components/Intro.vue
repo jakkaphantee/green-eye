@@ -1,24 +1,26 @@
 <template>
-  <div class="intro-page">
-    <div>
-      Intro
-    </div>
-    <video
-      :src="require('@/assets/images/intro/intro_video.mp4')"
-      autoplay
-      muted
-    />
+  <div class="app-page intro-page">
+    <!-- <video /> -->
   </div>
 </template>
 
 <script>
 export default {
   name: 'Intro',
+  data: () => ({
+    currentStep: 'intro-brief'
+  }),
+  methods: {
+    changeStep(step) {
+      this.currentStep = step
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/styles/variables';
 .intro-page {
-  position: relative;
+  background-color: $app-background-color;
 }
 </style>

@@ -5,37 +5,37 @@ const state = () => ({
         id: '1',
         name: 'คุณรู้สึกขุ่นเคืองเวลาเห็นคนมีความรัก',
         type: '1',
-        mediaName: ''
+        mediaName: 'q1_1'
       },
       {
         id: '2',
         name: 'คุณชอบอวดคู๋รักของคุณในโซเชียล',
         type: '1',
-        mediaName: ''
+        mediaName: 'q1_2'
       },
       {
         id: '3',
         name: 'คุณเป็นผู้ฟังมากกว่าผู้พูด',
         type: '1',
-        mediaName: ''
+        mediaName: 'q1_3'
       },
       {
         id: '4',
         name: 'คุณรู้สึกโกรธหรือเสียใจเวลาคนรักของคุณไม่สามารถทำตามที่คุณหวังไว้',
         type: '1',
-        mediaName: ''
+        mediaName: 'q1_4'
       },
       {
         id: '5',
         name: 'คุณมักจะรู้สึกกังวลเวลาอยู่ตัวคนเดียว',
         type: '1',
-        mediaName: ''
+        mediaName: 'q1_5'
       },
       {
         id: '6',
         name: 'คุณชื่อชมคู่รักคู่อื่นบ่อยครั้ง',
         type: '2',
-        mediaName: ''
+        mediaName: 'q1_6'
       },
     ],
     group2: [

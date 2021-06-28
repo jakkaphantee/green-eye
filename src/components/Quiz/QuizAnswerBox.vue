@@ -24,15 +24,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../assets/styles/variables';
 .quiz-answer-box-container {
   position: relative;
   display: inline-block;
   width: 24px;
   height: 24px;
-  border: 1px solid $primary-color;
+  border: 1px solid white;
   border-radius: 9999px;
-  background-color: $app-background-color;
   .checked-mark {
     position: absolute;
     top: 50%;
@@ -41,7 +39,7 @@ export default {
     width: 18px;
     height: 18px;
     border-radius: 9999px;
-    background-color: $primary-color;
+    background-color: white;
   }
 }
 </style>

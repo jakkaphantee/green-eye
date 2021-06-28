@@ -1,5 +1,8 @@
 <template>
   <div class="app-page">
+    <div
+      class="quiz-video-background"
+    />
     <div class="header-container">
       <div>
         {{ quizCount }} / 12
@@ -14,14 +17,17 @@
       </div>
       <div class="quiz-answer-container mt-4">
         <div class="quiz-answer-box-wrapper">
-          <div class="quiz-answer-background" />
-          <QuizAnswerBox
+          <div
             v-for="(answer, index) in answerList"
             :key="index"
-            :answerId="answer.id"
-            :isSelected="answer.isSelected"
-            @selectAnswer="selectAnswer(answer)"
-          />
+          >
+            <QuizAnswerBox
+              :answerId="answer.id"
+              :isSelected="answer.isSelected"
+              @selectAnswer="selectAnswer(answer)"
+            />
+            <div v-if="index !== 4" class="quiz-answer-background" />
+          </div>
         </div>
         <div class="quiz-answer-description-container">
           <div>
@@ -256,31 +262,22 @@ export default {
   justify-content: space-between;
   align-items: center;
   font-size: 18px;
-  color: $primary-color;
+  color: white;
 }
 .quiz-text {
   width: 80%;
   font-size: 18px;
-  color: $primary-color;
+  color: white;
   word-wrap: break-word;
 }
 .quiz-answer-container {
   position: relative;
-  width: 70%;
+  width: fit-content;
   height: fit-content;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  .quiz-answer-background {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    height: 1px;
-    background-color: $primary-color;
-    z-index: 0;
-  }
   .quiz-answer-box-wrapper,
   .quiz-answer-description-container {
     position: relative;
@@ -289,12 +286,36 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: white;
+  }
+  .quiz-answer-box-wrapper > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .quiz-answer-background {
+    position: relative;
+    width: 27px;
+    height: 1px;
+    background-color: white;
+    z-index: 0;
   }
 }
 .quiz-next {
   margin-top: 20%;
   font-family: 'Didot';
   font-size: 14px;
-  color: $primary-color;
+  color: white;
+}
+.quiz-video-background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: black;
 }
 </style>

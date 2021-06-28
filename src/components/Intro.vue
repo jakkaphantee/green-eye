@@ -4,7 +4,7 @@
       ref="introOpening"
       class="intro-opening-img"
       :class="currentStep !== 'intro-opening' ? 'fade-out' : ''"
-      src="https://firebasestorage.googleapis.com/v0/b/green-eye-46944.appspot.com/o/intro_opening.gif?alt=media&token=920d6597-fd52-4868-a351-487d60747efd"
+      :src="require('@/assets/images/intro/intro_opening.gif')"
     />
     <img
       v-if="isStartButtonShow"

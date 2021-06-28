@@ -42,6 +42,11 @@
       <div class="product-description">
         {{ currentProduct.description }}
       </div>
+      <img
+        class="mt-2"
+        width="100%"
+        :src="require(`@/assets/images/product/${currentProduct.imageName}_description.png`)"
+      />
     </div>
     <div class="product-buy-wrapper">
       <button class="green-eye-button" @click="addProductToCart()">
@@ -69,7 +74,8 @@ export default {
           'all_candle_01'
         ],
         priceTag: '3.00$',
-        price: 3
+        price: 3,
+        imageName: 'patchouli'
       },
       {
         id: '2',
@@ -83,7 +89,8 @@ export default {
           'all_candle_02'
         ],
         priceTag: '3.00$',
-        price: 3
+        price: 3,
+        imageName: 'bergamot'
       },
       {
         id: '3',
@@ -96,7 +103,8 @@ export default {
           'all_candle_01'
         ],
         priceTag: '3.00$',
-        price: 3
+        price: 3,
+        imageName: 'vanilla'
       },
       {
         id: '4',
@@ -110,7 +118,8 @@ export default {
           'all_candle_02'
         ],
         priceTag: '3.00$',
-        price: 3
+        price: 3,
+        imageName: 'mint'
       },
       {
         id: '5',
@@ -123,7 +132,8 @@ export default {
           'fire_gun_04'
         ],
         priceTag: '4.78$',
-        price: 4.78
+        price: 4.78,
+        imageName: 'fire_gun'
       },
       {
         id: '6',
@@ -137,7 +147,8 @@ export default {
           'match_05'
         ],
         priceTag: '1.00$',
-        price: 1
+        price: 1,
+        imageName: 'match'
       },
       {
         id: '7',
@@ -147,7 +158,8 @@ export default {
           'zippo_05'
         ],
         priceTag: '23.00$',
-        price: 23
+        price: 23,
+        imageName: 'zippo'
       }
     ],
     productId: '',
@@ -425,10 +437,10 @@ export default {
   padding: 0 20px;
   margin-bottom: 100px;
   text-align: left;
+  color: $primary-color;
   .product-price {
     font-family: 'DidotLTStd';
     font-size: 28px;
-    color: $primary-color;
   }
   .product-description {
     font-size: 14px;

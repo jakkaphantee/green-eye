@@ -1,13 +1,20 @@
 <template>
   <div class="app">
-    <HamburgerMenu v-if="isShowHamburger && isIntroEnd && isHamburgerShow" />
-    <CheckoutTab v-if="isShowCart && isIntroEnd" />
-    <Intro
-      v-if="!isIntroEnd"
-      @introEnd="isIntroEnd = true"
-    />
-    <div v-else class="app-wrapper">
-      <router-view />
+    <div v-if="isCouldEnter" class="app">
+      <HamburgerMenu v-if="isShowHamburger && isIntroEnd && isHamburgerShow" />
+      <CheckoutTab v-if="isShowCart && isIntroEnd" />
+      <Intro
+        v-if="!isIntroEnd"
+        @introEnd="isIntroEnd = true"
+      />
+      <div v-else class="app-wrapper">
+        <router-view />
+      </div>
+    </div>
+    <div v-else class="no-enter app-background">
+      <h4>
+        <strong>โปรดเข้าจากโทรศัพท์มือถือ</strong>
+      </h4>
     </div>
   </div>
 </template>
@@ -35,7 +42,8 @@ export default {
       'Quiz',
       'Result'
     ],
-    isIntroEnd: false
+    isIntroEnd: false,
+    isCouldEnter: true,
   }),
   computed: {
     ...mapState('user', {
@@ -50,6 +58,11 @@ export default {
     },
     isShowCart() {
       return !this.notAllowCart.includes(this.currentPage)
+    }
+  },
+  created() {
+    if (window.innerWidth > 480) {
+      this.isCouldEnter = false
     }
   }
 }
@@ -70,5 +83,13 @@ export default {
   max-width: 576px;
   height: 100%;
   padding-bottom: env(safe-area-inset-bottom);
+}
+.no-enter {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

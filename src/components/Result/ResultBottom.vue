@@ -14,7 +14,7 @@
     />
     <button
       class="green-eye-button next-button mt-4"
-      @click="changePage('ProductDetail')"
+      @click="changePage('Home')"
     >
       Next
     </button>
@@ -72,7 +72,7 @@ export default {
   },
   methods: {
     changePage(pageName) {
-      this.$router.push({ name: pageName, params: { id: this.productId } })
+      this.$router.push({ name: pageName })
     }
   }
 }

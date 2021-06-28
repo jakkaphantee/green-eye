@@ -79,6 +79,13 @@ export default {
       } else {
         this.menuIconName = newValue ? 'close_menu' : 'hamburger'
       }
+    },
+    currentRoute(newValue) {
+      if (newValue === 'Quiz') {
+        this.menuIconName = 'hamburger_white'
+      } else {
+        this.menuIconName = 'hamburger'
+      }
     }
   },
   created() {

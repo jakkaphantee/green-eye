@@ -1,5 +1,5 @@
 <template>
-  <div class="result-page app-background">
+  <div class="result-page">
     <ResultTop
       id="resultTop"
       @scrollToElement="scrollToElement"

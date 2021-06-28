@@ -1,12 +1,16 @@
 <template>
   <div class="app-page result-bottom">
     <img
-      width="60%"
+      width="70%"
       :src="require(`@/assets/images/result/result_${candleName}.png`)"
     />
     <img
       class="result-candle mt-3"
       :src="require(`@/assets/images/product/${candleName}_home.png`)"
+    />
+    <img
+      class="result-candle-background"
+      :src="require(`@/assets/images/result/result_${candleName}_background.jpeg`)"
     />
     <button
       class="green-eye-button next-button mt-4"
@@ -49,19 +53,19 @@ export default {
   mounted() {
     switch (this.maxScoreGroup) {
       case 'group1': {
-        this.productId = 3
+        this.productId = '3'
         break
       }
       case 'group2': {
-        this.productId = 1
+        this.productId = '1'
         break
       }
       case 'group3': {
-        this.productId = 2
+        this.productId = '2'
         break
       }
       case 'group4': {
-        this.productId = 4
+        this.productId = '4'
         break
       }
     }
@@ -87,10 +91,24 @@ export default {
   position: relative;
   width: 40%;
 }
+.result-candle-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
 .next-button {
   position: absolute;
   left: 50%;
-  bottom: 40px;
+  bottom: 30px;
   transform: translateX(-50%);
+  color: white;
+  border-color: white;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
 }
 </style>

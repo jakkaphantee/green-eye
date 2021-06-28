@@ -32,7 +32,8 @@ export default {
     notAllowCart: [
       'Purchase',
       'About',
-      'Quiz'
+      'Quiz',
+      'Result'
     ],
     isIntroEnd: false
   }),

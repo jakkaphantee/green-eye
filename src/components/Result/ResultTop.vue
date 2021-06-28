@@ -1,14 +1,27 @@
 <template>
   <div class="app-page result-top">
     <img
+      class="result-top-background"
+      :src="require('@/assets/images/result/result_top_background.jpeg')"
+    />
+    <img
       width="25%"
       :src="require('@/assets/images/general/brand_logo_text.png')"
     />
     <img
       class="result-product-image"
-      width="25%"
-      :src="require(`@/assets/images/product/${itemResult}_home.png`)"
+      :src="require(`@/assets/images/result/${itemResult}.png`)"
     />
+    <div class="result-description-container">
+      <img
+        class="description-background"
+        :src="require('@/assets/images/result/result_description_background.png')"
+      />
+      <img
+        class="description-text"
+        :src="require(`@/assets/images/result/result_${itemResult}.png`)"
+      />
+    </div>
     <img
       class="down-arrow-image"
       :src="require('@/assets/images/general/down_arrow.png')"
@@ -45,9 +58,10 @@ export default {
 }
 .result-product-image {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 23%;
+  right: 15%;
+  width: 25%;
+  z-index: 3;
 }
 .down-arrow-image {
   position: absolute;
@@ -56,5 +70,31 @@ export default {
   width: 8%;
   transform: translateX(-50%);
   cursor: pointer;
+}
+.result-top-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.result-description-container {
+  position: absolute;
+  top: 28%;
+  left: 10%;
+  width: 75%;
+  z-index: 2;
+  .description-background {
+    position: relative;
+    width: 100%;
+  }
+  .description-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+  }
 }
 </style>

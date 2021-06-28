@@ -66,8 +66,8 @@ export default {
 .down-arrow-image {
   position: absolute;
   left: 50%;
-  bottom: 25px;
-  width: 8%;
+  bottom: 20px;
+  width: 5%;
   transform: translateX(-50%);
   cursor: pointer;
 }

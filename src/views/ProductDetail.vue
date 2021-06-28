@@ -1,5 +1,5 @@
 <template>
-  <div class="app-page produt-detail-page">
+  <div class="app-page produt-detail-page app-background">
     <div class="product-title-container">
       <img
         class="back-icon"

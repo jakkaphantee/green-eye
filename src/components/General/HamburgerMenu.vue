@@ -33,7 +33,7 @@ export default {
   name: 'HamburgerMenu',
   data: () => ({
     isMenuOpen: false,
-    menuIconName: 'menu_icon',
+    menuIconName: '',
     menuList: [
       {
         imageName: 'menu_home',
@@ -67,9 +67,25 @@ export default {
       },
     ]
   }),
+  computed: {
+    currentRoute() {
+      return this.$route.name
+    }
+  },
   watch: {
     isMenuOpen(newValue) {
-      this.menuIconName = newValue ? 'close_menu' : 'menu_icon'
+      if (this.currentRoute === 'Quiz') {
+        this.menuIconName = newValue ? 'close_menu' : 'hamburger_white'
+      } else {
+        this.menuIconName = newValue ? 'close_menu' : 'hamburger'
+      }
+    }
+  },
+  mounted() {
+    if (this.currentRoute === 'Quiz') {
+      this.menuIconName = 'hamburger_white'
+    } else {
+      this.menuIconName = 'hamburger'
     }
   },
   methods: {

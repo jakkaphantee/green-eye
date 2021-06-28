@@ -19,6 +19,9 @@ html, body {
   width: 100%;
   height: 100%;
 }
+.app-background {
+  background-color: $app-background-color;
+}
 .page-title {
   position: relative;
   display: block;

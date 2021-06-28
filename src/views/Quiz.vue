@@ -241,7 +241,7 @@ export default {
     changeQuiz() {
       if (this.selectedAnswer.isSelected) {
         this.quizCount += 1
-        this.addScore(this.selectedAnswer.point)
+        this.addScore({ score: this.selectedAnswer.point, currentGroup: this.currentQuizGroup })
         this.changeQuizIndex()
         this.resetAnswer()
       }
@@ -286,7 +286,7 @@ export default {
 }
 .quiz-text {
   width: 80%;
-  font-size: 18px;
+  font-size: 20px;
   color: white;
   word-wrap: break-word;
 }
@@ -335,6 +335,7 @@ export default {
   width: 100%;
   height: 100%;
   z-index: -1;
+  background-color: black;
 }
 .intro-brief-content {
   position: relative;

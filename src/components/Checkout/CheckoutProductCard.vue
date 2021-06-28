@@ -4,7 +4,7 @@
     :class="isLast ? '' : 'card-border'"
   >
     <div class="checkout-product-image-container">
-      <img :src="require(`@/assets/images/product/${coverImageName}.jpeg`)" />
+      <img :src="require(`@/assets/images/product/${coverImageName}.png`)" />
     </div>
     <div class="checkout-product-detail-container">
       <div class="product-name">

@@ -1,5 +1,5 @@
 <template>
-  <div class="app-page about-page">
+  <div class="app-page about-page app-background">
     <div class="about-title">
       <img
         :src="require('@/assets/images/about/about_title.png')"

@@ -1,5 +1,5 @@
 <template>
-  <div class="app-page purchase-page">
+  <div class="app-page purchase-page app-background">
     <img
       class="back-icon"
       :src="require('@/assets/images/general/back_icon.png')"

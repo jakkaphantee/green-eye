@@ -155,6 +155,10 @@ export default {
         name: 'Zippo',
         description: 'ซิปโป้รุ่นคลาสสิค : zippo',
         imageList: [
+          'zippo_01',
+          'zippo_02',
+          'zippo_03',
+          'zippo_04',
           'zippo_05'
         ],
         priceTag: '23.00$',

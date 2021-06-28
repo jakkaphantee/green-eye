@@ -205,6 +205,7 @@ export default {
         4,
         5
       ]
+      this.changeQuizIndex()
     }
   },
   created() {
@@ -242,8 +243,10 @@ export default {
       if (this.selectedAnswer.isSelected) {
         this.quizCount += 1
         this.addScore({ score: this.selectedAnswer.point, currentGroup: this.currentQuizGroup })
-        this.changeQuizIndex()
         this.resetAnswer()
+        if (this.quizCount !== 4 && this.quizCount !== 7 && this.quizCount !== 10) {
+          this.changeQuizIndex()
+        }
       }
     },
     changeQuizIndex() {

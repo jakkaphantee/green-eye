@@ -9,7 +9,7 @@ const state = () => ({
       },
       {
         id: '2',
-        name: 'คุณชอบอวดคู๋รักของคุณในโซเชียล',
+        name: 'คุณชอบอวดคู่รักของคุณในโซเชียล',
         type: '1',
         mediaSource: 'https://green-eye.s3.ap-southeast-1.amazonaws.com/Q1_2.gif'
       },

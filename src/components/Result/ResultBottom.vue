@@ -82,9 +82,9 @@ export default {
 .result-bottom {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding: 20px;
+  padding: 15% 20px 20px 20px;
   overflow: hidden;
 }
 .result-candle {
@@ -102,7 +102,7 @@ export default {
 .next-button {
   position: absolute;
   left: 50%;
-  bottom: 30px;
+  bottom: 15%;
   transform: translateX(-50%);
   color: white;
   border-color: white;

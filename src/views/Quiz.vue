@@ -9,7 +9,7 @@
       <img
         width="100%"
         height="100%"
-        src="https://firebasestorage.googleapis.com/v0/b/green-eye-46944.appspot.com/o/intro_brief.jpeg?alt=media&token=4685686c-e4fb-4242-8cb4-1df6da88ffe7"
+        :src="require('@/assets/images/quiz/quiz_intro_background.jpeg')"
       />
     </div>
     <div class="app-page">

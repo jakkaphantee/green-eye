@@ -81,7 +81,7 @@ export default {
       }
     }
   },
-  mounted() {
+  created() {
     if (this.currentRoute === 'Quiz') {
       this.menuIconName = 'hamburger_white'
     } else {

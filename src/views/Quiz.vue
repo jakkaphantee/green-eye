@@ -1,7 +1,8 @@
 <template>
   <div class="app-page">
-    <div
+    <img
       class="quiz-video-background"
+      :src="currentQuiz.mediaSource"
     />
     <div class="header-container">
       <div>
@@ -309,13 +310,11 @@ export default {
 }
 .quiz-video-background {
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 50%;
   left: 0;
-  right: 0;
+  transform: translateY(-50%);
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-color: black;
 }
 </style>

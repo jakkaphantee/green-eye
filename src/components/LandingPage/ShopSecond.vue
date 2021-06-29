@@ -1,5 +1,5 @@
 <template>
-  <div class="app-page shop-second-page">
+  <div class="app-page shop-second-page app-background">
     <div class="page-title">
       hot of envy
     </div>

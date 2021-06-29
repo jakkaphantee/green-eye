@@ -14,7 +14,7 @@
     />
     <button
       class="green-eye-button next-button mt-4"
-      @click="changePage('Home')"
+      @click="changePage('LandingPage')"
     >
       Next
     </button>

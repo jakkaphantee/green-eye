@@ -1,19 +1,30 @@
 <template>
   <div class="app-page shop-main-page">
-    <div class="page-title">
+    <img
+      class="shop-main-background"
+      :src="require('@/assets/images/shop/shop_background.jpeg')"
+    />
+    <div class="page-title shop-main-title">
       candle
     </div>
     <div class="shop-product-list">
       <b-row>
         <b-col
-          v-for="product in productData"
+          v-for="(product, index) in productData"
           :key="product.name"
+          class="product-container"
+          :class="index > 1 ? 'mt-4':''"
           cols="6">
           <ProductCard
             :id="product.id"
             :name="product.name"
             :imageName="product.imageName"
             :description="product.description" />
+          <img
+            class="product-person-image"
+            :class="`${product.imageName}-person`"
+            :src="require(`@/assets/images/shop/${product.imageName}_person.png`)"
+          />
         </b-col>
       </b-row>
     </div>
@@ -37,6 +48,12 @@ export default {
         description: 'belief that you can do things well',
       },
       {
+        id: '4',
+        name: 'Mint candle',
+        imageName: 'mint',
+        description: 'understand and solve something',
+      },
+      {
         id: '2',
         name: 'Bergamot candle',
         imageName: 'bergamot',
@@ -47,12 +64,6 @@ export default {
         name: 'Vanilla candle',
         imageName: 'vanilla',
         description: 'delight of love',
-      },
-      {
-        id: '4',
-        name: 'Mint candle',
-        imageName: 'mint',
-        description: 'understand and solve something',
       },
     ],
   })
@@ -71,5 +82,44 @@ export default {
   justify-content: center;
   align-items: center;
   margin: 0 10px;
+}
+.shop-main-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+.product-container {
+  position: relative;
+  .product-person-image {
+    position: absolute;
+    width: 40%;
+    z-index: -1;
+    &.patchouli-person {
+      width: 90%;
+      top: -30%;
+      left: -20%;
+    }
+    &.mint-person {
+      width: 65%;
+      top: -30%;
+      right: -5%;
+    }
+    &.bergamot-person {
+      width: 60%;
+      top: -8%;
+      left: -20%;
+    }
+    &.vanilla-person {
+      width: 40%;
+      top: -8%;
+      right: -10%;
+    }
+  }
+}
+.shop-main-title {
+  color: white;
 }
 </style>

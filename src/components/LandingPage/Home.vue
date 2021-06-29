@@ -1,5 +1,5 @@
 <template>
-  <div class="home-page">
+  <div class="home-page app-background">
     <img
       class="home-brand-logo"
       :src="require('@/assets/images/home/home_brand_logo.png')"

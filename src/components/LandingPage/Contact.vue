@@ -1,5 +1,5 @@
 <template>
-  <div class="app-page contact-page">
+  <div class="app-page contact-page app-background">
     <div class="contact-head">
       <img :src="require('@/assets/images/contact/contact_head.png')" />
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="landing-page app-background">
+  <div class="landing-page">
     <Home
       id="home"
       @scrollToComponent="scrollToComponent"

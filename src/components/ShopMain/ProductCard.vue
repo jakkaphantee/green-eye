@@ -55,4 +55,8 @@ export default {
   position: relative;
   width: 100%;
 }
+.shop-product-description-box {
+  border-color: white;
+  color: white;
+}
 </style>

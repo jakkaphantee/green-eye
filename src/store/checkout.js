@@ -13,6 +13,9 @@ const getters = {
       totalPrice += totalItemPrice
     })
     return totalPrice
+  },
+  totalItem: (state) => {
+    return state.cart.length
   }
 }
 

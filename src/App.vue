@@ -5,11 +5,16 @@
       <CheckoutTab v-if="isShowCart && isIntroEnd" />
       <Intro
         v-if="!isIntroEnd"
-        @introEnd="isIntroEnd = true"
+        @introEnd="isIntroEnd = true; playAudio();"
       />
       <div v-else class="app-wrapper">
         <router-view />
       </div>
+      <audio
+        ref="webBackgroundMusic"
+        :src="require('@/assets/sound/web_background_music.mp3')"
+        loop
+      />
     </div>
     <div v-else class="no-enter app-background">
       <h4>
@@ -63,6 +68,12 @@ export default {
   created() {
     if (window.innerWidth > 480) {
       this.isCouldEnter = false
+    }
+  },
+  methods: {
+    playAudio() {
+      this.$refs.webBackgroundMusic.play()
+      this.$refs.webBackgroundMusic.loop = true
     }
   }
 }

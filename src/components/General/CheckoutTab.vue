@@ -1,11 +1,25 @@
 <template>
   <div class="checkout-tab">
-    <img
+    <div
       v-if="!isOpen"
       class="menu-icon"
-      :src="require('@/assets/images/general/cart_icon.png')"
-      @click="isOpen = true"
-    />
+    >
+      <img
+        width="100%"
+        :src="require('@/assets/images/general/cart_icon.png')"
+        @click="isOpen = true"
+      />
+      <div
+        v-if="totalItem > 0"
+        class="item-amount-mark"
+      >
+        <div>
+          <strong>
+            {{ totalItem }}
+          </strong>
+        </div>
+      </div>
+    </div>
     <img
       v-else
       class="menu-icon"
@@ -64,7 +78,8 @@ export default {
       cartItems: state => state.cart
     }),
     ...mapGetters('checkout', {
-      totalCost: 'totalCost'
+      totalCost: 'totalCost',
+      totalItem: 'totalItem'
     })
   },
   methods: {
@@ -146,5 +161,20 @@ export default {
     bottom: 30px;
     transform: translateX(-50%);
   }
+}
+.item-amount-mark {
+  position: absolute;
+  top: 70%;
+  left: -40%;
+  width: 17px;
+  height: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+  border-radius: 9999px;
 }
 </style>

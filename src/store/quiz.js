@@ -33,7 +33,7 @@ const state = () => ({
       },
       {
         id: '6',
-        name: 'คุณชื่อชมคู่รักคู่อื่นบ่อยครั้ง',
+        name: 'คุณชื่นชมคู่รักคู่อื่นบ่อยครั้ง',
         type: '2',
         mediaSource: 'https://green-eye.s3.ap-southeast-1.amazonaws.com/Q1_6.gif'
       },

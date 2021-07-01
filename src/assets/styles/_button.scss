@@ -13,4 +13,12 @@
     background-color: $primary-color;
     color: $app-background-color;
   }
+  &.white-button {
+    color: white;
+    border-color: white;
+    &:hover {
+      background-color: white;
+      color: $primary-color;
+    }
+  }
 }

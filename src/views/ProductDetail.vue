@@ -48,7 +48,7 @@
         :src="require(`@/assets/images/product/${currentProduct.imageName}_description.png`)"
       />
     </div>
-    <div class="product-buy-wrapper">
+    <div class="product-buy-wrapper mb-4">
       <button class="green-eye-button" @click="addProductToCart()">
         Add cart
       </button>
@@ -439,7 +439,6 @@ export default {
 .product-detail-container {
   position: relative;
   padding: 0 20px;
-  margin-bottom: 100px;
   text-align: left;
   color: $primary-color;
   .product-price {
@@ -451,9 +450,7 @@ export default {
   }
 }
 .product-buy-wrapper {
-  position: fixed;
-  left: 0;
-  bottom: 30px;
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;

@@ -16,8 +16,8 @@
     </div>
     <div class="contact-form-container">
       <div class="contact-name" align="left">
-        <label for="name">Name</label>
-        <input id="name" class="green-eye-input block" />
+        <label for="email">Email</label>
+        <input id="email" class="green-eye-input block rounded-border" />
       </div>
       <div class="contact-description mt-2" align="left">
         <label for="note">Note</label>

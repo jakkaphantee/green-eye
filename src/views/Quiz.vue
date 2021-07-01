@@ -4,7 +4,7 @@
       <img
         class="intro-brief-text"
         :src="require('@/assets/images/intro/intro_brief_text.png')"
-        @click="currentStep = ''; setIsHamburgerShow(true)"
+        @click="currentStep = 'intro-2'"
       />
       <img
         width="100%"
@@ -12,7 +12,15 @@
         :src="require('@/assets/images/quiz/quiz_intro_background.jpeg')"
       />
     </div>
-    <div class="app-page">
+    <QuizIntro2
+      v-else-if="currentStep === 'intro-2'"
+      @nextStep="currentStep = 'intro-3'"
+    />
+    <QuizIntro3
+      v-else-if="currentStep === 'intro-3'"
+      @nextStep="currentStep = 'quiz'; setIsHamburgerShow(true);"
+    />
+    <div v-else class="app-page">
       <img
         class="quiz-video-background"
         :src="currentQuiz.mediaSource"
@@ -62,12 +70,16 @@
 
 <script>
 import QuizAnswerBox from '@components/Quiz/QuizAnswerBox'
+import QuizIntro2 from '@components/Quiz/QuizIntro2'
+import QuizIntro3 from '@components/Quiz/QuizIntro3'
 import { mapMutations, mapState } from 'vuex'
 
 export default {
   name: 'Quiz',
   components: {
-    QuizAnswerBox
+    QuizAnswerBox,
+    QuizIntro2,
+    QuizIntro3
   },
   data: () => ({
     currentStep: 'intro-brief',

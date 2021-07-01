@@ -47,7 +47,7 @@ export default {
       'Quiz',
       'Result'
     ],
-    isIntroEnd: true,
+    isIntroEnd: false,
     isCouldEnter: true,
   }),
   computed: {

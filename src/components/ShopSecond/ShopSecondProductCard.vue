@@ -15,6 +15,11 @@
         </div>
       </div>
     </div>
+    <img
+      class="product-arrow"
+      :class="[name === 'Zippo' ? 'zippo-arrow' : '', name === 'Fire gun' ? 'fire-gun-arrow' : '']"
+      :src="require(`@/assets/images/general/${name === 'Fire gun' ? 'arrow_right' : 'right_arrow'}.png`)"
+    />
   </div>
 </template>
 
@@ -81,5 +86,18 @@ export default {
 }
 .fire-gun-text {
   align-items: flex-start !important;
+}
+.product-arrow {
+  position: absolute;
+  top: 90%;
+  right: 15px;
+  width: 35px;
+  &.zippo-arrow {
+    top: 70%;
+  }
+  &.fire-gun-arrow {
+    top: 40%;
+    width: 12px;
+  }
 }
 </style>

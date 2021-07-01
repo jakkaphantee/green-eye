@@ -17,8 +17,23 @@
         :src="require('@/assets/images/quiz/intro_2_popup_background.png')"
       />
     </div>
+    <div
+      v-if="isNextPopUpShow"
+      class="pop-up-container"
+      @click="$emit('nextStep')"
+    >
+      <img
+        class="pop-up-text"
+        width="100%"
+        :src="require('@/assets/images/quiz/intro2/next_pop_up_text.png')"
+      />
+      <img
+        class="pop-up-background background-next"
+        :src="require('@/assets/images/quiz/intro2/next_pop_up_background.png')"
+      />
+    </div>
     <div class="next-button">
-      <button class="green-eye-button white-button" @click="$emit('nextStep')">
+      <button class="green-eye-button white-button" @click="isNextPopUpShow = true">
         Next
       </button>
     </div>
@@ -29,7 +44,8 @@
 export default {
   name: 'QuizIntro2',
   data: () => ({
-    isPopUpShow: false
+    isPopUpShow: false,
+    isNextPopUpShow: false,
   })
 }
 </script>
@@ -55,11 +71,16 @@ export default {
   .pop-up-text {
     position: absolute;
     width: 55%;
+    z-index: 6;
   }
   .pop-up-background {
     position: relative;
     width: 120%;
     transform: scale(1.2);
+  }
+  .background-next {
+    width: 80%;
+    transform: none;
   }
 }
 </style>

@@ -10,12 +10,16 @@
     size="md"
   >
     <div class="purchase-modal-content">
-      <div align="left">
+      <!-- <div align="left">
         <i>Thank you for your purchase</i>
       </div>
       <div align="left">
         <i>Enjoy your product</i>
-      </div>
+      </div> -->
+      <img
+        width="100%"
+        :src="require('@/assets/images/purchase/thanks_text.png')"
+      />
       <img
         class="purchase-modal-close-icon"
         :src="require('@/assets/images/general/cross_icon.png')"
@@ -43,9 +47,14 @@ export default {
   border-radius: 0 !important;
   border-left: 0 !important;
   border-right: 0 !important;
-  border-color: $primary-color !important;
-  background-color: $app-background-color !important;
+  // border-color: $primary-color !important;
+  // background-color: $app-background-color !important;
+  border-color: none !important;
+  background-color: none !important;
   font-family: 'DidotLTStd';
+}
+.modal-body {
+  padding: 0 !important;
 }
 .purchase-modal-content {
   position: relative;
@@ -55,13 +64,12 @@ export default {
   align-items: flex-start;
   width: 100%;
   font-size: 19px;
-  padding: 15px 20px;
 }
 .purchase-modal-close-icon {
   position: absolute;
-  top: 5px;
-  right: 5px;
-  width: 15px;
+  top: 10px;
+  right: 10px;
+  width: 20px;
   cursor: pointer;
 }
 </style>

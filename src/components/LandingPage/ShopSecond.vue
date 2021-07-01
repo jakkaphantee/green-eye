@@ -1,7 +1,7 @@
 <template>
   <div class="app-page shop-second-page app-background">
     <div class="page-title">
-      hot of envy
+      <strong>HOT OF ENVY</strong>
     </div>
     <div class="gradient-tab" />
     <div class="shop-second-product-list">

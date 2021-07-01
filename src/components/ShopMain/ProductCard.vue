@@ -56,7 +56,6 @@ export default {
   width: 100%;
 }
 .shop-product-description-box {
-  border-color: white;
-  color: white;
+  border-top: none;
 }
 </style>

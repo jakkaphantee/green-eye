@@ -1,11 +1,13 @@
 <template>
-  <div class="app-page shop-main-page">
-    <img
+  <div class="app-page shop-main-page app-background">
+    <!-- <img
       class="shop-main-background"
       :src="require('@/assets/images/shop/shop_background.jpeg')"
-    />
-    <div class="page-title shop-main-title">
-      candle
+    /> -->
+    <div class="page-title">
+      <strong>
+        CANDLE
+      </strong>
     </div>
     <div class="shop-product-list">
       <b-row>
@@ -71,6 +73,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/styles/variables';
+
 .shop-main-page {
   display: flex;
   flex-direction: column;

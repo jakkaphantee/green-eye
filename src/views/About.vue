@@ -1,11 +1,11 @@
 <template>
   <div class="app-page about-page app-background">
-    <div class="about-title">
+    <div class="about-title fade-in-animation">
       <img
         :src="require('@/assets/images/about/about_title.png')"
       />
     </div>
-    <div class="about-content-container mt-3">
+    <div class="about-content-container mt-3 fade-in-animation">
       <div class="about-text">
         <img
           :src="require('@/assets/images/about/about_text.png')"
@@ -24,7 +24,7 @@
         </div>
       </div>
     </div>
-    <img class="about-footer" :src="require('@/assets/images/about/about_footer.png')" />
+    <img class="about-footer fade-in-animation" :src="require('@/assets/images/about/about_footer.png')" />
   </div>
 </template>
 

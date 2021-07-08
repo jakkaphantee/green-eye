@@ -1,5 +1,5 @@
 <template>
-  <div class="app-page produt-detail-page app-background">
+  <div class="app-page produt-detail-page">
     <div class="product-title-container">
       <img
         class="back-icon"
@@ -27,7 +27,7 @@
         />
       </div>
     </div>
-    <div class="product-image-index-container mt-2">
+    <div class="product-image-index-container mt-4">
       <div
         v-for="index in totalImageCount"
         :key="index"
@@ -35,7 +35,7 @@
         :class="index - 1 === currentImageIndex ? 'active' : ''"
       />
     </div>
-    <div class="product-detail-container mt-4">
+    <div class="product-detail-container mt-5">
       <div class="product-price">
         {{ currentProduct.priceTag }}
       </div>
@@ -276,6 +276,9 @@ export default {
 .produt-detail-page {
   overflow-x: hidden;
   overflow-y: scroll;
+  background-image: url('../assets/images/shop/shop_background.png');
+  background-size: cover;
+  background-position: center;
   @media (max-width: 576px) {
     padding: 0 20px;
   }
@@ -344,11 +347,11 @@ export default {
 }
 .product-image-box {
   position: relative;
-  width: 90%;
+  width: 70%;
   max-width: 350px;
-  height: calc(90vw - 40px);
+  height: calc(75vw - 40px);
   max-height: 350px;
-  border: 1px solid $primary-color;
+  // border: 1px solid $primary-color;
   overflow: hidden;
   .product-image {
     position: absolute;
@@ -438,7 +441,7 @@ export default {
 }
 .product-detail-container {
   position: relative;
-  padding: 0 20px;
+  padding: 50px 40px 0 40px;
   text-align: left;
   color: $primary-color;
   .product-price {
@@ -454,5 +457,13 @@ export default {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+.product-detail-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 </style>

@@ -3,7 +3,7 @@
     <div class="page-title">
       <strong>HOT OF ENVY</strong>
     </div>
-    <div class="gradient-tab" />
+    <div class="gradient-tab shop-second-gradient-animation" />
     <div class="shop-second-product-list">
       <b-row>
         <b-col

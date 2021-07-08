@@ -1,16 +1,19 @@
 <template>
   <div class="home-page app-background">
+    <div class="home-brand-logo">
+      GREEN EYE
+    </div>
+    <div class="character-woman-container">
+      <div class="home-white-circle woman" />
+      <img :src="require('@/assets/images/home/woman_character.png')" />
+    </div>
+    <div class="character-demon-container">
+      <div class="home-white-circle lg demon" />
+      <img :src="require('@/assets/images/home/demon_character.png')" />
+    </div>
     <img
-      class="home-brand-logo"
-      :src="require('@/assets/images/home/home_brand_logo.png')"
-    />
-    <img
-      class="home-text start-text"
-      :src="require('@/assets/images/home/start_text.png')"
-    />
-    <img
-      class="home-text quiz-text"
-      :src="require('@/assets/images/home/quiz_text.png')"
+      class="home-text"
+      :src="require('@/assets/images/home/start_quiz_text.png')"
     />
     <img
       class="start-quiz-button"
@@ -50,6 +53,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/styles/variables';
 .home-page {
   position: relative;
   width: 100%;
@@ -61,28 +65,87 @@ export default {
 .home-brand-logo {
   position: absolute;
   top: 12%;
-  width: 30%;
-  max-width: 110px;
+  font-size: 24px;
+  font-family: 'DIDOT';
+  color: $primary-color;
+}
+.home-white-circle {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  border-radius: 9999px;
+  background-color: rgba($color: white, $alpha: .5);
+  &.lg {
+    width: 80px;
+    height: 80px;
+  }
+  &.woman {
+    left: 32%;
+  }
+  &.demon {
+    top: -15%;
+    right: -10%;
+  }
+}
+.character-woman-container {
+  position: absolute;
+  top: 20%;
+  right: 15%;
+  img {
+    width: 120px;
+    animation: woman-animation 1s ease-out forwards;
+    @keyframes woman-animation {
+      from {
+        opacity: 0;
+        transform: translateX(150%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+}
+.character-demon-container {
+  position: absolute;
+  top: 42%;
+  left: 8%;
+  z-index: 5;
+  img {
+    width: 140px;
+    animation: demon-animation 1s ease-out;
+    @keyframes demon-animation {
+      from {
+        opacity: 0;
+        transform: translateX(-120%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
 }
 .home-text {
   position: absolute;
-  top: 36%;
+  top: 32%;
+  width: 60%;
   z-index: 5;
-  &.start-text {
-    width: 50%;
-    max-width: 150px;
-  }
-  &.quiz-text {
-    margin-top: 50px;
-    left: 50%;
-    width: 40%;
-    max-width: 130px;
+  animation: home-text-animation 1s ease-out;
+  @keyframes home-text-animation {
+    from {
+      transform: translateX(150%);
+    }
+    to {
+      transform: translateX(0);
+    }
   }
 }
 .start-quiz-button {
   position: absolute;
-  top: 46%;
-  left: 5%;
+  top: 54%;
+  right: 10%;
   width: 55%;
   max-width: 165px;
   z-index: 5;

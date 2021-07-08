@@ -23,6 +23,7 @@
             :imageName="product.imageName"
             :description="product.description" />
           <img
+            v-if="false"
             class="product-person-image"
             :class="`${product.imageName}-person`"
             :src="require(`@/assets/images/shop/${product.imageName}_person.png`)"

@@ -1,7 +1,7 @@
 <template>
   <div class="shop-second-product-card mt-2" @click="changePage('ProductDetail')">
     <div id="product-image">
-      <img :src="require(`@/assets/images/product/${imageName}.png`)" />
+      <img class="product-image-animation" :src="require(`@/assets/images/product/${imageName}.png`)" />
     </div>
     <div
       id="product-desc"
@@ -42,6 +42,10 @@ export default {
     description: {
       type: String,
       default: 'description long text',
+    },
+    isAnimationPlay: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

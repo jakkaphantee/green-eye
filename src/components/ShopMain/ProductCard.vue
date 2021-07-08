@@ -1,7 +1,7 @@
 <template>
   <div class="shop-product-card" @click="changePage(name)">
     <div class="shop-product-image-container">
-      <img width="100%" :src="require(`@/assets/images/product/${imageName}_home.png`)" />
+      <img class="product-image-animation" width="100%" :src="require(`@/assets/images/product/${imageName}_home.png`)" />
     </div>
     <div class="shop-product-description-box">
       <div class="shop-product-name">
@@ -33,6 +33,10 @@ export default {
     description: {
       type: String,
       default: 'description long text',
+    },
+    isAnimationPlay: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

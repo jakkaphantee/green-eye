@@ -1,10 +1,10 @@
 <template>
-  <div class="result-page">
+  <div class="result-page" ref="resultPage">
     <ResultTop
       id="resultTop"
       @scrollToElement="scrollToElement"
     />
-    <ResultBottom id="resultBottom" />
+    <ResultBottom id="resultBottom" :isAnimationPlay="isAnimationPlay" />
   </div>
 </template>
 
@@ -18,10 +18,23 @@ export default {
     ResultTop,
     ResultBottom,
   },
+  data: () => ({
+    isAnimationPlay: false
+  }),
+  mounted() {
+    this.$refs.resultPage.addEventListener('scroll', this.srollListener)
+  },
   methods: {
     scrollToElement(elementId) {
       document.getElementById(elementId).scrollIntoView({ behavior: 'smooth' })
+    },
+    srollListener() {
+      const resultBottomRect = document.getElementById('resultBottom').getBoundingClientRect()
+      if (resultBottomRect.top < 40) this.isAnimationPlay = true
     }
+  },
+  beforeDestroy() {
+    this.$refs.resultPage.removeEventListener('scroll', this.srollListener)
   }
 }
 </script>

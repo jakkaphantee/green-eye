@@ -1,11 +1,14 @@
 <template>
   <div class="app-page result-bottom">
     <img
+      class="result-text"
+      :class="isAnimationPlay ? 'show-element' : ''"
       width="70%"
       :src="require(`@/assets/images/result/result_${candleName}.png`)"
     />
     <img
       class="result-candle mt-3"
+      :class="isAnimationPlay ? 'show-element' : ''"
       :src="require(`@/assets/images/product/${candleName}_home.png`)"
     />
     <img
@@ -25,6 +28,12 @@
 import { mapGetters } from 'vuex'
 export default {
   name: 'ResultBottom',
+  props: {
+    isAnimationPlay: {
+      type: Boolean,
+      default: false
+    }
+  },
   data: () => ({
     productId: 0
   }),
@@ -87,9 +96,15 @@ export default {
   padding: 15% 20px 20px 20px;
   overflow: hidden;
 }
+.result-text {
+  opacity: 0;
+  transition: all 1s linear;
+}
 .result-candle {
   position: relative;
   width: 40%;
+  opacity: 0;
+  transition: all 1s linear;
 }
 .result-candle-background {
   position: absolute;
@@ -110,5 +125,8 @@ export default {
     background-color: white;
     color: black;
   }
+}
+.show-element {
+  opacity: 1;
 }
 </style>

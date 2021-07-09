@@ -34,10 +34,16 @@
         </div>
       </div>
       <div class="quiz-content-container">
-        <div class="quiz-text">
+        <div
+          class="quiz-text"
+          :class="isHide ? 'hide-element' : ''"
+        >
           {{ currentQuiz.name }}
         </div>
-        <div class="quiz-answer-container mt-4">
+        <div
+          class="quiz-answer-container mt-4"
+          :class="isHide ? 'hide-element' : ''"
+        >
           <div class="quiz-answer-box-wrapper">
             <div
               v-for="(answer, index) in answerList"
@@ -174,7 +180,8 @@ export default {
       4,
       5
     ],
-    quizIndex: 1
+    quizIndex: 1,
+    isHide: false,
   }),
   computed: {
     ...mapState('quiz', {
@@ -253,13 +260,18 @@ export default {
     },
     changeQuiz() {
       if (this.selectedAnswer.isSelected) {
-        this.quizCount += 1
-        this.addScore({ score: this.selectedAnswer.point, currentGroup: this.currentQuizGroup })
-        this.resetAnswer()
-        if (this.quizCount !== 4 && this.quizCount !== 7 && this.quizCount !== 10) {
-          this.changeQuizIndex()
-        }
+        this.isHide = true
+        setTimeout(() => {
+          this.isHide = false
+          this.quizCount += 1
+          this.addScore({ score: this.selectedAnswer.point, currentGroup: this.currentQuizGroup })
+          this.resetAnswer()
+          if (this.quizCount !== 4 && this.quizCount !== 7 && this.quizCount !== 10) {
+            this.changeQuizIndex()
+          }
+        }, 1000)
       }
+      
     },
     changeQuizIndex() {
       const index = Math.floor(Math.random() * this.quizIndexList.length)
@@ -304,6 +316,7 @@ export default {
   font-size: 20px;
   color: white;
   word-wrap: break-word;
+  transition: all .5s linear;
 }
 .quiz-answer-container {
   position: relative;
@@ -313,6 +326,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  transition: all .5s linear;
   .quiz-answer-box-wrapper,
   .quiz-answer-description-container {
     position: relative;
@@ -335,6 +349,9 @@ export default {
     background-color: white;
     z-index: 0;
   }
+}
+.hide-element {
+  opacity: 0;
 }
 .quiz-next {
   margin-top: 20%;

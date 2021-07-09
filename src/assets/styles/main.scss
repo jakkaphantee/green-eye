@@ -20,9 +20,7 @@ html, body {
   height: 100%;
 }
 .fade-in-animation {
-  * {
-    animation: fade-in 1s linear forwards;
-  }
+  animation: fade-in 1s linear forwards;
   @keyframes fade-in {
     from {
       opacity: 0;

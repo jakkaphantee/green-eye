@@ -6,6 +6,12 @@
       :src="require('@/assets/images/quiz/intro_2_background.gif')"
       @click="isPopUpShow = true"
     />
+    <img
+      v-if="isMarkShow"
+      class="background-with-mark"
+      :src="require('@/assets/images/quiz/intro2/intro_2_background_white.gif')"
+      @click="isPopUpShow = true"
+    />
     <div v-if="isPopUpShow" class="pop-up-container" @click="isPopUpShow = false">
       <img
         class="pop-up-text"
@@ -46,7 +52,13 @@ export default {
   data: () => ({
     isPopUpShow: false,
     isNextPopUpShow: false,
-  })
+    isMarkShow: true
+  }),
+  mounted() {
+    setTimeout(() => {
+      this.isMarkShow = false
+    }, 3000)
+  }
 }
 </script>
 
@@ -82,5 +94,13 @@ export default {
     width: 80%;
     transform: none;
   }
+}
+.background-with-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 </style>

@@ -5,14 +5,15 @@
       :src="require('@/assets/images/result/result_top_background.jpeg')"
     />
     <img
+      class="fade-in-animation"
       width="25%"
       :src="require('@/assets/images/general/brand_logo_text.png')"
     />
     <img
-      class="result-product-image"
+      class="result-product-image fade-in-animation"
       :src="require(`@/assets/images/result/${itemResult}.png`)"
     />
-    <div class="result-description-container">
+    <div class="result-description-container fade-in-animation">
       <img
         class="description-background"
         :src="require('@/assets/images/result/result_description_background.png')"

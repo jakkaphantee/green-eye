@@ -1,5 +1,5 @@
 <template>
-  <div class="landing-page">
+  <div class="landing-page" ref="landingPage">
     <Home
       id="home"
       @scrollToComponent="scrollToComponent"
@@ -7,10 +7,12 @@
     <ShopMain
       id="shopMain"
       @scrollToComponent="scrollToComponent"
+      :isAnimationPlay="isShopMainAnimationPlay"
     />
     <ShopSecond
       id="shopSecond"
       @scrollToComponent="scrollToComponent"
+      :isAnimationPlay="isShopSecondAnimationPlay"
     />
     <Contact
       id="contact"
@@ -26,6 +28,8 @@ import ShopMain from '@components/LandingPage/ShopMain'
 import ShopSecond from '@components/LandingPage/ShopSecond'
 import Contact from '@components/LandingPage/Contact'
 
+// import { isEnterViewport } from '@/utils/scrollEventCheck'
+
 export default {
   name: 'LandingPage',
   components: {
@@ -34,6 +38,10 @@ export default {
     ShopSecond,
     Contact
   },
+  data: () => ({
+    isShopMainAnimationPlay: false,
+    isShopSecondAnimationPlay: false,
+  }),
   computed: {
     ...mapState('user', {
       currentLandingPageComponent: state => state.currentLandingPageComponent
@@ -50,6 +58,7 @@ export default {
     if (this.currentLandingPageComponent !== '') {
       this.scrollToComponent(this.currentLandingPageComponent)
     }
+    this.$refs.landingPage.addEventListener('scroll', this.scollListener)
   },
   methods: {
     ...mapMutations('user', {
@@ -58,7 +67,16 @@ export default {
     scrollToComponent(elementId) {
       document.getElementById(elementId).scrollIntoView({ behavior: 'smooth' })
       this.setCurrentLandingPageComponent('')
+    },
+    scollListener() {
+      const shopMainRect = document.getElementById('shopMain').getBoundingClientRect()
+      const shopSecondRect = document.getElementById('shopSecond').getBoundingClientRect()
+      if (shopMainRect.top < 40) this.isShopMainAnimationPlay = true
+      if (shopSecondRect.top < 40) this.isShopSecondAnimationPlay = true
     }
+  },
+  beforeDestroy() {
+    this.$refs.landingPage.removeEventListener('scroll', this.scollListener)
   }
 }
 </script>

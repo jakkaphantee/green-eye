@@ -3,7 +3,10 @@
     <div class="page-title">
       <strong>HOT OF ENVY</strong>
     </div>
-    <div class="gradient-tab shop-second-gradient-animation" />
+    <div
+      class="gradient-tab shop-second-gradient-transition"
+      :class="isAnimationPlay ? 'show-gradient' : ''"
+    />
     <div class="shop-second-product-list">
       <b-row>
         <b-col
@@ -14,7 +17,8 @@
             :productId="product.id"
             :name="product.name"
             :imageName="product.imageName"
-            :description="product.description" />
+            :description="product.description"
+            :isAnimationPlay="isAnimationPlay" />
         </b-col>
       </b-row>
     </div>
@@ -39,6 +43,12 @@ import ShopSecondProductCard from '@components/ShopSecond/ShopSecondProductCard'
 
 export default {
   name: 'ShopSecond',
+  props: {
+    isAnimationPlay: {
+      type: Boolean,
+      default: false,
+    }
+  },
   components: {
     ShopSecondProductCard
   },

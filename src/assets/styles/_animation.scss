@@ -1,28 +1,18 @@
-.product-image-animation {
-  animation: product-image-animation 1s ease-out forwards;
-  animation-iteration-count: infinite;
-  @keyframes product-image-animation {
-    from {
-      opacity: 0;
-      transform: translateX(-30%);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
+.product-image-transition {
+  opacity: 0;
+  transform: translateX(-30%);
+  transition: all 1s ease-out;
+  &.show-image {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
-.shop-second-gradient-animation {
-  animation: shop-second-gradient-animation 1s ease-out forwards;
-  animation-iteration-count: infinite;
-  @keyframes shop-second-gradient-animation {
-    from {
-      opacity: 0;
-      transform: translateY(-15%);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.shop-second-gradient-transition {
+  opacity: 0;
+  transform: translateY(-15%);
+  transition: all 1s ease-out;
+  &.show-gradient {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

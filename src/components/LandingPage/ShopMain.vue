@@ -21,7 +21,8 @@
             :id="product.id"
             :name="product.name"
             :imageName="product.imageName"
-            :description="product.description" />
+            :description="product.description"
+            :isAnimationPlay="isAnimationPlay" />
           <img
             v-if="false"
             class="product-person-image"
@@ -39,6 +40,12 @@ import ProductCard from '@components/ShopMain/ProductCard'
 
 export default {
   name: 'ShopMain',
+  props: {
+    isAnimationPlay: {
+      type: Boolean,
+      default: false,
+    }
+  },
   components: {
     ProductCard,
   },

@@ -1,7 +1,11 @@
 <template>
   <div class="shop-second-product-card mt-2" @click="changePage('ProductDetail')">
     <div id="product-image">
-      <img class="product-image-animation" :src="require(`@/assets/images/product/${imageName}.png`)" />
+      <img
+        class="product-image-transition"
+        :class="isAnimationPlay ? 'show-image' : ''"
+        :src="require(`@/assets/images/product/${imageName}.png`)"
+      />
     </div>
     <div
       id="product-desc"

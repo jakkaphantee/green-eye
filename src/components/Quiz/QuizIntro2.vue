@@ -3,12 +3,6 @@
     <img
       width="100%"
       height="100%"
-      :src="require('@/assets/images/quiz/intro_2_background.gif')"
-      @click="isPopUpShow = true"
-    />
-    <img
-      v-if="isMarkShow"
-      class="background-with-mark"
       :src="require('@/assets/images/quiz/intro2/intro_2_background_white.gif')"
       @click="isPopUpShow = true"
     />
@@ -51,14 +45,8 @@ export default {
   name: 'QuizIntro2',
   data: () => ({
     isPopUpShow: false,
-    isNextPopUpShow: false,
-    isMarkShow: true
-  }),
-  mounted() {
-    setTimeout(() => {
-      this.isMarkShow = false
-    }, 3000)
-  }
+    isNextPopUpShow: false
+  })
 }
 </script>
 
